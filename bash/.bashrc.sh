@@ -48,7 +48,7 @@ else
 fi
 
 # # Configs for bashrc
-if [ -f "$BASH_REPO_DIR"/prompt.sh ]; then
+if [ -f "$BASH_REPO_DIR"/.prompt.sh ]; then
     . "$BASH_REPO_DIR"/.prompt.sh
 fi
 
