@@ -100,3 +100,33 @@ function prompt() {
             exit 1;;
     esac
 }
+
+speed_test() {
+    local nodeName="$2"
+    [ -z "$1" ] && ./speedtest-cli/speedtest --progress=no --accept-license --accept-gdpr > ./speedtest-cli/speedtest.log 2>&1 || \
+    ./speedtest-cli/speedtest --progress=no --server-id=$1 --accept-license --accept-gdpr > ./speedtest-cli/speedtest.log 2>&1
+    if [ $? -eq 0 ]; then
+        local dl_speed=$(awk '/Download/{print $3" "$4}' ./speedtest-cli/speedtest.log)
+        local up_speed=$(awk '/Upload/{print $3" "$4}' ./speedtest-cli/speedtest.log)
+        local latency=$(awk '/Latency/{print $2" "$3}' ./speedtest-cli/speedtest.log)
+        if [[ -n "${dl_speed}" && -n "${up_speed}" && -n "${latency}" ]]; then
+            printf "\033[0;33m%-18s\033[0;32m%-18s\033[0;31m%-20s\033[0;36m%-12s\033[0m\n" " ${nodeName}" "${up_speed}" "${dl_speed}" "${latency}"
+        fi
+    fi
+}
+
+speed() {
+    speed_test '' 'Speedtest.net'
+    speed_test '21541' 'Los Angeles, US'
+    speed_test '43860' 'Dallas, US'
+    speed_test '40879' 'Montreal, CA'
+    speed_test '24215' 'Paris, FR'
+    speed_test '28922' 'Amsterdam, NL'
+    speed_test '24447' 'Shanghai, CN'
+    speed_test '26352' 'Nanjing, CN'
+    speed_test '27594' 'Guangzhou, CN'
+    speed_test '32155' 'Hongkong, CN'
+    speed_test '6527'  'Seoul, KR'
+    speed_test '7311'  'Singapore, SG'
+    speed_test '21569' 'Tokyo, JP'
+}
