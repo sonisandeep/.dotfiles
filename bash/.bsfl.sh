@@ -772,9 +772,9 @@ cmd() {
 ## @ingroup time
 ## @brief Displays the current timestamp.
 ## @return Current timestamp.
-now() {
-    date +%s
-}
+#now() {
+#    date +%s
+#}
 
 ## @fn elapsed()
 ## @ingroup time
