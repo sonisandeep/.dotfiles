@@ -39,7 +39,6 @@ bash_specific_settings() {
 }
 
 
-
 if [ ${MACHINE} = "Mac" ]; then
     RC_FILE=.zshrc
 else
@@ -48,18 +47,18 @@ else
 fi
 
 # # Configs for bashrc
-if [ -f "$BASH_REPO_DIR"/.prompt.sh ]; then
-    . "$BASH_REPO_DIR"/.prompt.sh
+if [ -f ${BASH_REPO_DIR}/.prompt.sh ]; then
+    . ${BASH_REPO_DIR}/.prompt.sh
 fi
 
-if [ -f "$BASH_REPO_DIR"/bash_aliases.sh ]; then
-    . "$BASH_REPO_DIR"/.bash_aliases.sh
+if [ -f ${BASH_REPO_DIR}/bash_aliases.sh ]; then
+    . ${BASH_REPO_DIR}/.bash_aliases.sh
 fi    
  
-if [ -f "$BASH_REPO_DIR"/bash_functions.sh ]; then
-    . "$BASH_REPO_DIR"/.bash_functions.sh
+if [ -f ${BASH_REPO_DIR}/bash_functions.sh ]; then
+    . ${BASH_REPO_DIR}/.bash_functions.sh
 fi
 
-if [ -f "$BASH_REPO_DIR"/bsfl.sh ]; then
-    . "$BASH_REPO_DIR"/.bsfl.sh
+if [ -f ${BASH_REPO_DIR}/bsfl.sh ]; then
+    . ${BASH_REPO_DIR}/.bsfl.sh
 fi
