@@ -48,10 +48,10 @@ fi
 
 # # Configs for bashrc
 declare -a FILES_TO_SOURCE=('.prompt.sh' 
-                                  '.bash_aliases.sh' 
-                                  '.bash_functions.sh' 
-                                  '.bsfl.sh' 
-                                  '.docker_functions.sh')
+                            '.bash_aliases.sh' 
+                            '.bash_functions.sh' 
+                            '.bsfl.sh' 
+                            '.docker_functions.sh')
 
 for SRC_FILE in "${FILES_TO_SOURCE[@]}" 
 do
