@@ -47,23 +47,27 @@ else
 fi
 
 # # Configs for bashrc
-if [ -f ${BASH_REPO_DIR}/.prompt.sh ]; then
-    . ${BASH_REPO_DIR}/.prompt.sh
-fi
+# if [ -f ${BASH_REPO_DIR}/.prompt.sh ]; then
+#     . ${BASH_REPO_DIR}/.prompt.sh
+# fi
 
-if [ -f ${BASH_REPO_DIR}/.bash_aliases.sh ]; then
-    . ${BASH_REPO_DIR}/.bash_aliases.sh
-fi    
+# if [ -f ${BASH_REPO_DIR}/.bash_aliases.sh ]; then
+#     . ${BASH_REPO_DIR}/.bash_aliases.sh
+# fi    
  
-if [ -f ${BASH_REPO_DIR}/.bash_functions.sh ]; then
-    . ${BASH_REPO_DIR}/.bash_functions.sh
-fi
+# if [ -f ${BASH_REPO_DIR}/.bash_functions.sh ]; then
+#     . ${BASH_REPO_DIR}/.bash_functions.sh
+# fi
 
-if [ -f ${BASH_REPO_DIR}/.bsfl.sh ]; then
-    . ${BASH_REPO_DIR}/.bsfl.sh
-fi
+# if [ -f ${BASH_REPO_DIR}/.bsfl.sh ]; then
+#     . ${BASH_REPO_DIR}/.bsfl.sh
+# fi
 
-local declare -a FILES_TO_SOURCE=('.docker_functions.sh')
+local declare -a FILES_TO_SOURCE=('.prompt.sh', 
+                                  '.bash_aliases.sh', 
+                                  '.bash_functions.sh', 
+                                  '.bsfl.sh', 
+                                  '.docker_functions.sh')
 
 for SRC_FILE in "${FILES_TO_SOURCE[@]}" 
 do
