@@ -62,3 +62,12 @@ fi
 if [ -f ${BASH_REPO_DIR}/.bsfl.sh ]; then
     . ${BASH_REPO_DIR}/.bsfl.sh
 fi
+
+local declare -a FILES_TO_SOURCE=('.docker_functions.sh')
+
+for SRC_FILE in "${FILES_TO_SOURCE[@]}" 
+do
+    if [ -f ${BASH_REPO_DIR}/${SRC_FILE} ]; then
+        . ${BASH_REPO_DIR}/${SRC_FILE}
+    fi
+done
