@@ -66,6 +66,10 @@ function myip {
   echo $ip
 }
 
+function myloc {
+    echo $(curl -s http://ipinfo.io)
+}
+
 function ssh_ip {
     local HOST=$1
     IP_LINE=$(grep -A 4 -e ${HOST} ~/.ssh/config | grep HostName | sed -E 's/HostName\s+(.+)/\1/M' | sed 's/^ *//;s/ *$//' )
