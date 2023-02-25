@@ -67,7 +67,7 @@ function myip {
 }
 
 function myloc {
-    echo $(curl -s http://ipinfo.io)
+    curl -s http://ipinfo.io
 }
 
 function ssh_ip {
