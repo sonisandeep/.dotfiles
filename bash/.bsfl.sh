@@ -134,7 +134,7 @@ declare -rx CYAN_BG="tput setab 6"
 # --------------------------------------------------------------#
 
 # Bug fix for Bash, parsing exclamation mark.
-set +o histexpand
+# set +o histexpand
 
 # Groups of functions
 # --------------------------------------------------------------#
