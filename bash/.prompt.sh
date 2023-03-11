@@ -38,7 +38,7 @@ fi
 unset color_prompt force_color_prompt
 
 
-if [ ${MACHINE} = "Mac" ]; then
+if [ "${MACHINE}" = "Mac" ]; then
     NEWLINE=$'\n'
     PROMPT="%F{cyan}%T@%d%f:>${NEWLINE}%F{yellow}~$ %f"
 fi
@@ -90,7 +90,7 @@ esac
 export STARSHIP_DISTRO="$ICON "
 export STARSHIP_CONFIG=$BASH_REPO_DIR/.config/starship.toml
 
-if [ $_distro = "macos" ]; then
+if [ "$_distro" = "macos" ]; then
     eval "$(starship init zsh)"
 else
     eval "$(starship init bash)"
